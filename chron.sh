@@ -3,5 +3,6 @@
 while true
 do
     ~/UCSD-bus\ map/route.sh
-    sleep 10
+    echo "Getting Information"
+    sleep 5
 done
