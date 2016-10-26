@@ -2,7 +2,7 @@
 
 library(stringr)
 setwd("~/UCSD-bus\ map/downloads")
-dat = read.table("Route2092.txt",stringsAsFactors = F)
+dat = read.table("Route2092.txt",stringsAsFactors = F,fill = T)
 
 
 # Preparing dat for record
