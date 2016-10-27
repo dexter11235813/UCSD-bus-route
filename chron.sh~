@@ -1,7 +1,0 @@
-
-#!/bin/bash
-while true
-do
-    ~/UCSD-big\ map/route.sh
-    sleep 10
-done
