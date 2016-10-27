@@ -1,9 +1,10 @@
 # Extract data from the UCSD Bus API and store the formatted data in a CSV
 
-library(stringr)
-setwd("~/UCSD-bus\ map/downloads")
-dat = read.table("Route2092.txt",stringsAsFactors = F,fill = T)
-
+# library(stringr)
+# setwd("~/UCSD-bus\ map/downloads")
+# 
+# dat = read.table("Route1098.txt",stringsAsFactors = F,fill = T)
+# 
 
 # Preparing dat for record
 prep = function(temp.t)
@@ -12,7 +13,6 @@ prep = function(temp.t)
 #temp = dat[1,]
 temp = paste0(temp.t$V1,temp.t$V2,temp.t$V3)
 temp = unlist(strsplit(temp,"},"))
-print(temp)
 temp = ifelse(length(temp)==2,rbind(paste0(temp[1],temp[2]),paste0(temp[3],temp[4])),rbind(paste0(temp[1],temp[2])))
 temp = gsub("\\{","",temp)
 if(length(temp) == 2){
@@ -37,10 +37,10 @@ record = temp2[seq(2,length(temp2),by = 2)]
 names(record) = temp2[seq(1,length(temp2),by = 2)]
 return(record)
 }
-record = prep(dat[1,])
-for( i in 2:nrow(dat))
-{
-  record = rbind(record,prep(dat[i,]))
-}
-record$Latitude = NULL
-write.csv(record,file = "Route2092.csv")
+# record = prep(dat[1,])
+# for( i in 2:nrow(dat))
+# {
+#   record = rbind(record,prep(dat[i,]))
+# }
+# record$Latitude = NULL
+# write.csv(record,file = "Route1098.csv")

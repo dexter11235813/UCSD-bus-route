@@ -1,6 +1,6 @@
 library(ggmap)
 library(ggplot2)
-dat = read.csv("Route2092.csv")
+dat = read.csv("Route1098.csv")
 dat = dat[,-1]
 temp = dat[,c("Name","Longitude","Latitude")]
 temp$Name = as.factor(temp$Name)
