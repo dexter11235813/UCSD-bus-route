@@ -11,10 +11,10 @@ while(T)
 data = read_html(url) %>% html_text()
 print(paste0("getting infromation ",i))
 i = i + 1
-write(data,"Route2092.txt",append = T)
+write(data,paste0("Route",route_id,".txt"),append = T)
 Sys.sleep(5)
 }
 }
-get_data(2092)
+get_data(route_id[1])
 
 

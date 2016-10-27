@@ -12,13 +12,15 @@ prep = function(temp.t)
 #temp = dat[1,]
 temp = paste0(temp.t$V1,temp.t$V2,temp.t$V3)
 temp = unlist(strsplit(temp,"},"))
-temp = rbind(paste0(temp[1],temp[2]),paste0(temp[3],temp[4]))
+print(temp)
+temp = ifelse(length(temp)==2,rbind(paste0(temp[1],temp[2]),paste0(temp[3],temp[4])),rbind(paste0(temp[1],temp[2])))
 temp = gsub("\\{","",temp)
+if(length(temp) == 2){
 return(as.data.frame(rbind(conv(temp[1]),conv(temp[2]))))
-#sapply(temp,function(x) conv(x))
+} else{
+  return(as.data.frame(rbind(conv(temp[1]))))
 }
-
-
+}
 
 
 # clean and Convert into dataframe
